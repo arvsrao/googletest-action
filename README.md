@@ -14,7 +14,7 @@ Define desired formatting rules in a .clang-format file at the repository root. 
 To use this action, create a `.github/workflows/googletest-checker.yml` in the target repository containing:
 
 ```
-name: clang-format
+name: googletest-project
 on:
   push:
     paths-ignore:
@@ -22,7 +22,7 @@ on:
     - 'README.md'
 
 jobs:
-  formatting-check:
+  test-project:
     name: Test Project
     runs-on: ubuntu-latest
     steps:

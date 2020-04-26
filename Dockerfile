@@ -12,7 +12,7 @@ LABEL "homepage"="https://github.com/arvsrao/googletest-action"
 LABEL "maintainer"="arvsrao <arvsrao@gmail.com>"
 
 RUN apt-get -y update
-RUN apt-get install software-properties-common
+RUN apt-get -y install software-properties-common
 RUN apt-add-repository 'deb https://apt.kitware.com/ubuntu/ bionic main'
 RUN apt-get -y install git build-essential cmake qtbase5-dev
 

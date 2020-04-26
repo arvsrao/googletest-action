@@ -12,7 +12,17 @@ LABEL "homepage"="https://github.com/arvsrao/googletest-action"
 LABEL "maintainer"="arvsrao <arvsrao@gmail.com>"
 
 RUN apt-get -y update
-RUN apt-get -y install qtbase5-dev
+RUN apt-get -y install git cmake qtbase5-dev
+
+RUN git clone https://github.com/google/googletest.git
+RUN mkdir -p /googletest/build && \
+    cd /googletest/build && \
+    cmake .. && \
+    make && \
+    make install && \
+    cd /
+
+RUN export GTEST_DIR="/googletest/googletest/" GTEST_LIB_DIR="/googletest/build/lib/"
 
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]

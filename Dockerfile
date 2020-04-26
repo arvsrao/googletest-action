@@ -13,10 +13,8 @@ LABEL "maintainer"="arvsrao <arvsrao@gmail.com>"
 
 RUN apt-get -y update
 RUN apt-get -y install qtbase5-dev
-RUN wget https://github.com/google/googletest/archive/master.zip
-RUN unzip master.zip && \
-    mv googletest-master /googletest && \
-    mkdir -p /googletest/build && \
+RUN git clone https://github.com/google/googletest.git
+RUN mkdir -p /googletest/build && \
     cd /googletest/build && \
     cmake .. && \
     make && \

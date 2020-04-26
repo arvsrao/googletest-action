@@ -2,7 +2,7 @@
 
 cd "$GITHUB_WORKSPACE" || exit 1
 
-ln -s /usr/src/gtest/googletest ./test/gtest 
+ln -s /google/googletest ./test/gtest 
 mkdir build
 cd build
 cmake ../

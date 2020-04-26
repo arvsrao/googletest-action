@@ -11,8 +11,10 @@ LABEL "repository"="https://github.com/arvsrao/googletest-action.git"
 LABEL "homepage"="https://github.com/arvsrao/googletest-action"
 LABEL "maintainer"="arvsrao <arvsrao@gmail.com>"
 
-RUN apt-get -y update
+RUN apt purge --auto-remove cmake
+RUN apt-add-repository 'deb https://apt.kitware.com/ubuntu/ bionic main'
 RUN apt-get -y install git build-essential cmake qtbase5-dev
+RUN apt-get -y update
 
 RUN git clone https://github.com/google/googletest.git
 RUN mkdir -p /googletest/build && \

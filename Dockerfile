@@ -14,7 +14,11 @@ LABEL "maintainer"="arvsrao <arvsrao@gmail.com>"
 RUN apt-get -y update
 RUN apt-get -y install software-properties-common
 RUN apt-add-repository 'deb https://apt.kitware.com/ubuntu/ bionic main'
-RUN apt-get -y install git build-essential cmake qtbase5-dev
+RUN apt-get -y install git wget
+RUN wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | sudo apt-key add -
+
+RUN apt-get -y install build-essential cmake qtbase5-dev
+RUN cmake --version
 
 RUN git clone https://github.com/google/googletest.git
 RUN mkdir -p /googletest/build && \

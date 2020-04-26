@@ -12,7 +12,7 @@ LABEL "homepage"="https://github.com/arvsrao/googletest-action"
 LABEL "maintainer"="arvsrao <arvsrao@gmail.com>"
 
 RUN apt-get -y update
-RUN apt-get -y install cmake qtbase5-dev
+RUN apt-get -y install qtbase5-dev
 RUN wget https://github.com/google/googletest/archive/master.zip
 RUN unzip master.zip && \
     mv googletest-master /googletest && \

@@ -12,7 +12,7 @@ LABEL "homepage"="https://github.com/arvsrao/googletest-action"
 LABEL "maintainer"="arvsrao <arvsrao@gmail.com>"
 
 RUN apt-get -y update
-RUN apt-get -y install git cmake qtbase5-dev
+RUN apt-get -y install git build-essential cmake qtbase5-dev
 
 RUN git clone https://github.com/google/googletest.git
 RUN mkdir -p /googletest/build && \

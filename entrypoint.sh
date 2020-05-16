@@ -6,4 +6,8 @@ mkdir build
 cd build
 cmake ../
 make
-./test/convex_hull_tests
+
+for f in $(find test/ -type f -executable); do
+  echo "running test suite " $f
+  ./$f
+done
